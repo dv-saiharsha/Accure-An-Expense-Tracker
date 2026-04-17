@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #FFF;
+    color: #000;
+    line-height: 1.5;
+    padding-bottom: env(safe-area-inset-bottom);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    padding: 0 1.25rem;
+}
+
+/* Material Symbols */
+.material-symbols-rounded {
+    font-family: 'Material Symbols Rounded' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Glass card */
+.glass-card {
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+}
+
+/* Primary button */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+    background: #000;
+    color: #FFF;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+    width: 100%;
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 2px solid #000;
+    background: transparent;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+    width: 100%;
+}
+
+.btn-outline:active {
+    transform: scale(0.97);
+}
+
+/* Animations */
+.animate-scale {
+    animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.96) translateY(12px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Float field */
+.float-field {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.float-field input {
+    width: 100%;
+    padding: 1.25rem 1rem 0.5rem;
+    border: 2px solid #EEE;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    outline: none;
+    transition: 0.2s;
+}
+
+.float-field input:focus {
+    border-color: #000;
+}
+
+.float-field label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    color: #888;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.float-field input:focus + label,
+.float-field input:not(:placeholder-shown) + label {
+    top: 0.65rem;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: #276EF1;
+}
+
+/* Bottom tab bar */
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid #F0F0F0;
+    padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+    color: #BBB;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    transition: 0.2s;
+}
+
+.tab-item.active {
+    color: #000;
+}
+
+.tab-item .material-symbols-rounded {
+    font-size: 22px;
+}
+
+/* Page wrapper with bottom padding for tab bar */
+.page {
+    padding-bottom: 100px;
+    min-height: 100vh;
+}
